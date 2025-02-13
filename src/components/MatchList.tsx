@@ -2,7 +2,6 @@
 
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useTheme } from "next-themes";
 
 interface Match {
   id: number;
@@ -15,6 +14,16 @@ interface Match {
   score?: string;
 }
 
+interface ApiMatch {
+  id: number;
+  league_id: number;
+  name: string;
+  league?: { name?: string };
+  starting_at: string;
+  state_id: number;
+  result_info?: string;
+}
+
 async function fetchMatches(date: string): Promise<{
   [leagueId: number]: { leagueName: string; matches: Match[] };
 }> {
@@ -22,8 +31,6 @@ async function fetchMatches(date: string): Promise<{
     const response = await axios.get(`/api/fixtures`, {
       params: { date },
     });
-
-    console.log("Proxy API Response:", response.data);
 
     const groupedMatches: {
       [leagueId: number]: { leagueName: string; matches: Match[] };
@@ -34,7 +41,7 @@ async function fetchMatches(date: string): Promise<{
       ? response.data.data
       : [];
 
-    matchesData.forEach((match: any) => {
+    matchesData.forEach((match: ApiMatch) => {
       const [homeTeam, awayTeam] = match.name.split(" vs ");
       const leagueId = match.league_id;
       const leagueName = match.league?.name || `League ${leagueId}`;
@@ -69,7 +76,6 @@ async function fetchMatches(date: string): Promise<{
 
 export default function MatchList({ selectedDate }: { selectedDate: string }) {
   console.log(selectedDate);
-  const { theme } = useTheme(); // Detects current theme (light/dark)
   const { data, isLoading, error } = useQuery({
     queryKey: ["matches", selectedDate],
     queryFn: () => fetchMatches(selectedDate),

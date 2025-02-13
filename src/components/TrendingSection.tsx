@@ -11,12 +11,13 @@ import Trending4 from "../../public/assets/images/trending4.jpg";
 import Trending5 from "../../public/assets/images/Trending5.png";
 import Trending6 from "../../public/assets/images/Trending6.png";
 import { useState } from "react";
+import { StaticImageData } from "next/image";
 
 interface NewsItem {
   id: number;
   title: string;
   time: string;
-  image: any;
+  image: StaticImageData;
   isFilled: boolean;
 }
 
@@ -131,7 +132,13 @@ export default function TrendingSection() {
                 {news.time}
               </p>
             </div>
-            <Bookmark size={16} className={cn("text-primary",news.isFilled ? "fill-primary text-primary" : "text-primary")} />
+            <Bookmark
+              size={16}
+              className={cn(
+                "text-primary",
+                news.isFilled ? "fill-primary text-primary" : "text-primary"
+              )}
+            />
           </div>
         ))}
       </div>

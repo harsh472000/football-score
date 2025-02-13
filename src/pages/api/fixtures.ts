@@ -25,9 +25,13 @@ export default async function handler(
     );
 
     return res.status(200).json(response.data);
-  } catch (error: any) {
-    return res
-      .status(error.response?.status || 500)
-      .json({ message: "Error fetching data", error: error.response?.data });
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error)) {
+      return res.status(error.response?.status || 500).json({
+        message: "Error fetching data",
+        error: error.response?.data || error.message,
+      });
+    }
+    return res.status(500).json({ message: "An unknown error occurred" });
   }
 }

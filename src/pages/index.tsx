@@ -1,24 +1,22 @@
-import Image from "next/image";
-import { Sofia_Sans, Geist_Mono } from "next/font/google";
+// import { Sofia_Sans, Geist_Mono } from "next/font/google";
 
-import TrendingSection from "@/components/TrendingSection";
 import ScoringSection from "@/components/ScoringSection";
 
-const sofiaSans = Sofia_Sans({
-  variable: "--font-sofia-sans",
-  subsets: ["latin"],
-});
+// const sofiaSans = Sofia_Sans({
+//   variable: "--font-sofia-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export default function Home() {
   return (
     <>
-    <ScoringSection />
-    {/* <TrendingSection /> */}
-  </>
+      <ScoringSection />
+      {/* <TrendingSection /> */}
+    </>
   );
 }
