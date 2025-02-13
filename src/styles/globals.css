@@ -84,3 +84,23 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* Thin width */
+}
+
+::-webkit-scrollbar-track {
+  background: #2d2d2d; /* Track color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c3cc5a; /* Primary color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a9b23f; /* Darker shade on hover */
+}
