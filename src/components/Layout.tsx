@@ -3,19 +3,14 @@ import TrendingSection from "./TrendingSection";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex p-4 dark:bg-mainDark h-screen">
+    <div className="flex p-4 dark:bg-mainDark h-screen sm:h-full">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content */}
-      <div className="flex-1 grid grid-cols-3 gap-4 pl-4">
-        {/* Left Section (2/3 width) */}
-        <div className="col-span-2 bg-gray-200 dark:bg-backgroundDark rounded-lg p-6">
-          {children}
-        </div>
-
-        {/* Right Section (1/3 width) */}
-        <div className="col-span-1 bg-gray-300 dark:bg-backgroundDark rounded-lg px-[17px] py-[20px]">
+      <div className="flex-1 flex gap-4 pl-4 sm:flex-col sm:pl-0 md:pl-0">
+        <div className="w-2/3 sm:w-full rounded-lg">{children}</div>
+        <div className="w-1/3 sm:w-full bg-gray-100 dark:bg-backgroundDark rounded-lg">
           <TrendingSection />
         </div>
       </div>

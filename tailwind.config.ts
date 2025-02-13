@@ -12,6 +12,19 @@ export default {
       fontFamily: {
         sans: ["Sofia Sans", "sans-serif"], // Adding Sofia Sans
       },
+      screens: {
+        sm: { min: "100px", max: "650px" },
+
+        md: { min: "500px", max: "1000px" },
+
+        lg: { min: "1001px", max: "1200px" },
+
+        xl: { min: "1201px", max: "200px" },
+        mMax: { min: "1001px" },
+        lMax: { min: "1400px" },
+        xlMax: { min: "1600px" },
+        xMax: { min: "2000px" },
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
