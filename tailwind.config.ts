@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 export default {
   darkMode: "class", // Enable dark mode using class
@@ -10,7 +11,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Sofia Sans", "sans-serif"], // Adding Sofia Sans
+        sans: ["var(--font-sofia-sans)", ...fontFamily.sans],
       },
       screens: {
         sm: { min: "100px", max: "650px" },

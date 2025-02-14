@@ -26,27 +26,27 @@ export default function DateSelector({
     {
       label: today.clone().subtract(2, "days").format("dddd"),
       date: today.clone().subtract(2, "days").format("DD MMM"),
-      value: today.clone().subtract(2, "days").format("YYYY-MM-DD"), // Ensuring correct format
+      value: today.clone().subtract(2, "days").format("YYYY-MM-DD"), 
     },
     {
       label: today.clone().subtract(1, "days").format("dddd"),
       date: today.clone().subtract(1, "days").format("DD MMM"),
-      value: today.clone().subtract(1, "days").format("YYYY-MM-DD"), // Ensuring correct format
+      value: today.clone().subtract(1, "days").format("YYYY-MM-DD"),
     },
     {
       label: "Today",
       date: today.format("DD MMM"),
-      value: today.format("YYYY-MM-DD"), // Ensuring correct format
+      value: today.format("YYYY-MM-DD"),
     },
     {
       label: today.clone().add(1, "days").format("dddd"),
       date: today.clone().add(1, "days").format("DD MMM"),
-      value: today.clone().add(1, "days").format("YYYY-MM-DD"), // Ensuring correct format
+      value: today.clone().add(1, "days").format("YYYY-MM-DD"),
     },
     {
       label: today.clone().add(2, "days").format("dddd"),
       date: today.clone().add(2, "days").format("DD MMM"),
-      value: today.clone().add(2, "days").format("YYYY-MM-DD"), // Ensuring correct format
+      value: today.clone().add(2, "days").format("YYYY-MM-DD"),
     },
   ];
 

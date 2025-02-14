@@ -4,12 +4,12 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Bookmark, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Trending1 from "../../public/assets/images/Trending1.png";
-import Trending2 from "../../public/assets/images/Trending2.png";
-import Trending3 from "../../public/assets/images/trending3.jpg";
-import Trending4 from "../../public/assets/images/trending4.jpg";
-import Trending5 from "../../public/assets/images/Trending5.png";
-import Trending6 from "../../public/assets/images/Trending6.png";
+import Trending1 from "../../../public/assets/images/Trending1.png";
+import Trending2 from "../../../public/assets/images/Trending2.png";
+import Trending3 from "../../../public/assets/images/trending3.jpg";
+import Trending4 from "../../../public/assets/images/trending4.jpg";
+import Trending5 from "../../../public/assets/images/Trending5.png";
+import Trending6 from "../../../public/assets/images/Trending6.png";
 import { useState } from "react";
 import { StaticImageData } from "next/image";
 
@@ -71,7 +71,7 @@ export default function TrendingSection() {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   return (
-    <div className="rounded-lg w-full bg-gray-100 dark:bg-backgroundDark p-4 transition-all">
+    <div className="rounded-lg w-full bg-gray-100 dark:bg-backgroundDark p-4 transition-all h-[80vh] sm:h-full">
       {/* Trending Header */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-bold text-backgroundDark dark:text-white">
@@ -111,7 +111,7 @@ export default function TrendingSection() {
       </div>
 
       {/* Scrollable News List */}
-      <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-gray-300 dark:scrollbar-track-gray-700 max-h-[55vh]">
+      <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-gray-300 dark:scrollbar-track-gray-700 max-h-[38vh]">
         {trendingNews.map((news) => (
           <div
             key={news.id}

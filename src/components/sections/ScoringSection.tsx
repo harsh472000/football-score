@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
-import HeroImg from "../../public/assets/images/football_hero_img.png";
-import DateSelector from "./DateSelector";
-import MatchList from "./MatchList";
+import HeroImg from "../../../public/assets/images/football_hero_img.png";
+import DateSelector from "../DateSelector";
+import MatchList from "../MatchList";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import moment from "moment"; // Import moment for date formatting
 
@@ -43,9 +43,9 @@ export default function ScoringSection() {
             />
           </div>
 
-          {/* Match List (Scrollable Section) */}
+          {/* Match List */}
           <div className="mt-4 overflow-y-auto max-h-[40vh] scrollbar-thin scrollbar-thumb-primary scrollbar-track-gray-700 rounded-[20px]">
-            <MatchList selectedDate={formattedDate} /> {/* Pass dynamic date */}
+            <MatchList selectedDate={formattedDate} />
           </div>
         </div>
       </div>
