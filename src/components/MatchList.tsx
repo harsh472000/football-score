@@ -75,7 +75,6 @@ async function fetchMatches(date: string): Promise<{
 }
 
 export default function MatchList({ selectedDate }: { selectedDate: string }) {
-  console.log(selectedDate);
   const { data, isLoading, error } = useQuery({
     queryKey: ["matches", selectedDate],
     queryFn: () => fetchMatches(selectedDate),
